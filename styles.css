@@ -1,36 +1,83 @@
+/* Fondo gris oscuro para toda la página */
 body {
-    background-color: #343a40; /* Gris oscuro */
+    background-color: #2f2f2f;
+    color: white;
 }
 
-.header, .footer {
+/* Header */
+.header {
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+}
+
+/* Navbar */
+.navbar {
     background-color: #4b0082; /* Morado oscuro */
 }
 
-.form-switch .form-check-input {
-    width: 50px;
-    height: 25px;
+.navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff6347; /* Rojo tomate cuando está activo */
+}
+
+/* Botón toggle */
+#toggle-view {
     background-color: cyan;
+    color: white;
     border: none;
-    border-radius: 25px;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 16px;
 }
 
-.form-switch .form-check-input:checked {
+#toggle-view.sbs-mode {
     background-color: #343a40; /* Gris oscuro */
+    color: white;
 }
 
-.form-switch .form-check-input::before {
-    content: "";
-    width: 21px;
-    height: 21px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    transition: transform 0.3s ease;
+#toggle-view:focus {
+    outline: none;
 }
 
-.form-switch .form-check-input:checked::before {
-    transform: translateX(25px);
+/* Footer */
+.footer {
+    background-color: #4b0082; /* Morado oscuro */
+    color: white;
+}
+
+.footer a {
+    color: #ff6347;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Imágenes */
+img {
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección de imágenes ocultas SBS */
+#sbs-view {
+    display: none;
+}
+
+/* Colores de los textos */
+.text-muted {
+    color: #ffffff !important;
+}
+
+/* Espaciado entre las imágenes */
+.row {
+    margin-top: 30px;
+}
+
+.col-md-4 {
+    margin-bottom: 20px;
 }
