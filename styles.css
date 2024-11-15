@@ -1,26 +1,36 @@
-/* Estilos personalizados */
-.bg-indigo {
-    background-color: #3F51B5;
+body {
+    background-color: #343a40; /* Gris oscuro */
 }
 
-.slider.round {
-    position: relative;
+.header, .footer {
+    background-color: #4b0082; /* Morado oscuro */
+}
+
+.form-switch .form-check-input {
     width: 50px;
-    height: 24px;
-    background-color: #ccc;
-    border-radius: 34px;
+    height: 25px;
+    background-color: cyan;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
-.slider.round:before {
+.form-switch .form-check-input:checked {
+    background-color: #343a40; /* Gris oscuro */
+}
+
+.form-switch .form-check-input::before {
     content: "";
-    position: absolute;
-    width: 22px;
-    height: 22px;
+    width: 21px;
+    height: 21px;
     background-color: white;
     border-radius: 50%;
-    transition: .4s;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
 }
 
-input:checked + .slider.round:before {
-    transform: translateX(26px);
+.form-switch .form-check-input:checked::before {
+    transform: translateX(25px);
 }
