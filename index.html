@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visión Anaglifo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-indigo">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Visión Anaglifo</a>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container my-5">
+        <div class="d-flex justify-content-center mb-4">
+            <label class="form-switch">
+                <input type="checkbox" id="toggle-view" onclick="toggleImages()">
+                <span class="slider round"></span> Cambiar vista
+            </label>
+        </div>
+
+        <!-- Sección de imágenes -->
+        <div class="row" id="image-sections">
+            <!-- Sección 1 -->
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph1.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 1">
+                    <img src="left1.jpg" class="img-fluid stereo d-none" alt="Imagen Left 1">
+                    <img src="right1.jpg" class="img-fluid stereo d-none" alt="Imagen Right 1">
+                    <p class="text-muted">Profundidad: Media</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph2.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 2">
+                    <img src="left2.jpg" class="img-fluid stereo d-none" alt="Imagen Left 2">
+                    <img src="right2.jpg" class="img-fluid stereo d-none" alt="Imagen Right 2">
+                    <p class="text-muted">Profundidad: Alta</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph3.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 3">
+                    <img src="left3.jpg" class="img-fluid stereo d-none" alt="Imagen Left 3">
+                    <img src="right3.jpg" class="img-fluid stereo d-none" alt="Imagen Right 3">
+                    <p class="text-muted">Profundidad: Baja</p>
+                </div>
+            </div>
+
+            <!-- Sección 2 -->
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph4.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 4">
+                    <img src="left4.jpg" class="img-fluid stereo d-none" alt="Imagen Left 4">
+                    <img src="right4.jpg" class="img-fluid stereo d-none" alt="Imagen Right 4">
+                    <p class="text-muted">Profundidad: Media</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph5.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 5">
+                    <img src="left5.jpg" class="img-fluid stereo d-none" alt="Imagen Left 5">
+                    <img src="right5.jpg" class="img-fluid stereo d-none" alt="Imagen Right 5">
+                    <p class="text-muted">Profundidad: Alta</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph6.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 6">
+                    <img src="left6.jpg" class="img-fluid stereo d-none" alt="Imagen Left 6">
+                    <img src="right6.jpg" class="img-fluid stereo d-none" alt="Imagen Right 6">
+                    <p class="text-muted">Profundidad: Baja</p>
+                </div>
+            </div>
+
+            <!-- Sección 3 -->
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph7.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 7">
+                    <img src="left7.jpg" class="img-fluid stereo d-none" alt="Imagen Left 7">
+                    <img src="right7.jpg" class="img-fluid stereo d-none" alt="Imagen Right 7">
+                    <p class="text-muted">Profundidad: Media</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph8.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 8">
+                    <img src="left8.jpg" class="img-fluid stereo d-none" alt="Imagen Left 8">
+                    <img src="right8.jpg" class="img-fluid stereo d-none" alt="Imagen Right 8">
+                    <p class="text-muted">Profundidad: Alta</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="text-center">
+                    <img src="anaglyph9.jpg" class="img-fluid anaglyph" alt="Imagen Anaglifo 9">
+                    <img src="left9.jpg" class="img-fluid stereo d-none" alt="Imagen Left 9">
+                    <img src="right9.jpg" class="img-fluid stereo d-none" alt="Imagen Right 9">
+                    <p class="text-muted">Profundidad: Baja</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="bg-indigo text-center text-white py-3">
+        <p>&copy; 2024 Angel Jafet Alvarez Melo, Tecnologias Emergentes ITP</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap y JavaScript personalizado -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleImages() {
+            const anaglyphImages = document.querySelectorAll('.anaglyph');
+            const stereoImages = document.querySelectorAll('.stereo');
+            anaglyphImages.forEach(img => img.classList.toggle('d-none'));
+            stereoImages.forEach(img => img.classList.toggle('d-none'));
+        }
+    </script>
+</body>
+</html>
