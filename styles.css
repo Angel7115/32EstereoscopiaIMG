@@ -1,6 +1,6 @@
 /* Fondo gris oscuro para toda la página */
 body {
-    background-color: #2f2f2f;
+    background-color: #656161;
     color: white;
     font-family: Arial, sans-serif;
 }
@@ -104,4 +104,8 @@ input:checked + .slider:before {
 
 .col-md-4 {
     margin-bottom: 20px;
+}
+
+footer{
+    background-color: #5e129c;
 }
