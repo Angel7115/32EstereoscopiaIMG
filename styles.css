@@ -2,6 +2,7 @@
 body {
     background-color: #2f2f2f;
     color: white;
+    font-family: Arial, sans-serif;
 }
 
 /* Header */
@@ -23,48 +24,71 @@ body {
     color: #ff6347; /* Rojo tomate cuando está activo */
 }
 
-/* Botón toggle */
-#toggle-view {
-    background-color: cyan;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-size: 16px;
+/* Toggle Switch */
+.toggle-container {
+    margin: 20px 0;
+    text-align: center;
 }
 
-#toggle-view.sbs-mode {
-    background-color: #343a40; /* Gris oscuro */
-    color: white;
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
-#toggle-view:focus {
-    outline: none;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-/* Footer */
-.footer {
-    background-color: #4b0082; /* Morado oscuro */
-    color: white;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
 }
 
-.footer a {
-    color: #ff6347;
-    text-decoration: none;
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+input:checked + .slider {
+    background-color: #2196F3;
 }
 
-/* Imágenes */
-img {
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+input:checked + .slider:before {
+    transform: translateX(26px);
 }
 
 /* Sección de imágenes ocultas SBS */
 #sbs-view {
+    display: none;
+}
+
+#sbs-view.d-none {
+    display: none;
+}
+
+#anaglyph-view {
+    display: block;
+}
+
+#anaglyph-view.d-none {
     display: none;
 }
 
@@ -81,26 +105,3 @@ img {
 .col-md-4 {
     margin-bottom: 20px;
 }
-/* styles.css */
-
-#toggle-view {
-    background-color: cyan;
-    color: white;
-    border: none;
-}
-
-#toggle-view.sbs-mode {
-    background-color: #343a40; /* Gris oscuro */
-    color: white;
-}
-
-.navbar-link-active {
-    background: linear-gradient(to right, cyan, red); /* Degradado Cyan-Rojo */
-    color: white;
-}
-
-.navbar-link-inactive {
-    background-color: black;
-    color: white;
-}
-
