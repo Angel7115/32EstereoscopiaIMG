@@ -106,6 +106,38 @@ input:checked + .slider:before {
     margin-bottom: 20px;
 }
 
-footer{
-    background-color: #5e129c;
+
+        h3 {
+    color: white; /* Establece el color blanco para los títulos (YO, Edificio, Objetos) */
 }
+        .form-switch .form-check-input {
+            width: 50px;
+            height: 25px;
+            background-color: cyan;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+        }
+        .form-switch .form-check-input:checked {
+            background-color: #b41715; /* Gris oscuro */
+        }
+        .form-switch .form-check-input::before {
+            content: "";
+            width: 21px;
+            height: 21px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+        }
+        .form-switch .form-check-input:checked::before {
+            transform: translateX(25px);
+        }
+
+        /* Estilo para el footer morado */
+        footer {
+            background-color: #6f42c1; /* Fondo morado para el footer */
+            color: white; /* Texto blanco */
+        }
