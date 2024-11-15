@@ -120,32 +120,39 @@
     <!-- Scripts de Bootstrap y JavaScript personalizado -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
    <script>
-    function setView(view) {
-        const anaglyphView = document.getElementById('anaglyph-view');
-        const sbsView = document.getElementById('sbs-view');
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        
-        // Ocultar ambas secciones inicialmente
-        anaglyphView.classList.add('d-none');
-        sbsView.classList.add('d-none');
-        
-        // Mostrar la sección correspondiente
-        if (view === 'anaglyph') {
-            anaglyphView.classList.remove('d-none');
-            // Cambiar el estilo de los botones del navbar
-            navLinks[0].classList.add('navbar-link-active');
-            navLinks[0].classList.remove('navbar-link-inactive');
-            navLinks[1].classList.add('navbar-link-inactive');
-            navLinks[1].classList.remove('navbar-link-active');
-        } else if (view === 'sbs') {
-            sbsView.classList.remove('d-none');
-            // Cambiar el estilo de los botones del navbar
-            navLinks[1].classList.add('navbar-link-active');
-            navLinks[1].classList.remove('navbar-link-inactive');
-            navLinks[0].classList.add('navbar-link-inactive');
-            navLinks[0].classList.remove('navbar-link-active');
-        }
+// Función para cambiar entre las secciones Anaglifo y SBS
+function setView(view) {
+    const anaglyphView = document.getElementById('anaglyph-view');
+    const sbsView = document.getElementById('sbs-view');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    // Ocultar ambas secciones inicialmente
+    anaglyphView.classList.add('d-none');
+    sbsView.classList.add('d-none');
+
+    // Mostrar la sección correspondiente
+    if (view === 'anaglyph') {
+        anaglyphView.classList.remove('d-none');
+        // Cambiar el estilo de los botones del navbar
+        navLinks[0].classList.add('active');
+        navLinks[1].classList.remove('active');
+    } else if (view === 'sbs') {
+        sbsView.classList.remove('d-none');
+        // Cambiar el estilo de los botones del navbar
+        navLinks[1].classList.add('active');
+        navLinks[0].classList.remove('active');
     }
+}
+
+// Función para manejar el cambio de estado del Toggle Switch
+function toggleView() {
+    const toggle = document.getElementById('toggle-view');
+    if (toggle.checked) {
+        setView('sbs');
+    } else {
+        setView('anaglyph');
+    }
+}
 </script>
 </body>
 </html>
