@@ -81,3 +81,26 @@ img {
 .col-md-4 {
     margin-bottom: 20px;
 }
+/* styles.css */
+
+#toggle-view {
+    background-color: cyan;
+    color: white;
+    border: none;
+}
+
+#toggle-view.sbs-mode {
+    background-color: #343a40; /* Gris oscuro */
+    color: white;
+}
+
+.navbar-link-active {
+    background: linear-gradient(to right, cyan, red); /* Degradado Cyan-Rojo */
+    color: white;
+}
+
+.navbar-link-inactive {
+    background-color: black;
+    color: white;
+}
+
